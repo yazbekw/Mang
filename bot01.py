@@ -76,8 +76,10 @@ def get_answer_index(options, correct_answer):
                 return idx
         return 0
     else:
+        # الخيارات قائمة (list)
         try:
-            return int(correct_answer) - 1
+            # هنا نتعامل مع correct_answer كفهرس مباشر، وليس كرقم ترتيبي
+            return int(correct_answer)
         except:
             if isinstance(correct_answer, bool):
                 return 0 if correct_answer else 1
